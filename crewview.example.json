@@ -1,0 +1,9 @@
+{
+  "$comment": "Crewview roles. worker is the model Claude Code is asked to use (claude-... or opus/sonnet/haiku). orchestrator, reviewer and helper are workflow suggestions for native Codex agents; Crewview does not change the Codex model picker.",
+  "models": {
+    "orchestrator": "gpt-6-astra",
+    "worker": "claude-opus-5-5",
+    "reviewer": "gpt-6-sol",
+    "helper": "gpt-6-luna"
+  }
+}

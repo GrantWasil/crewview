@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="referrer" content="no-referrer">
+  <title>Crewview</title>
+  <link rel="stylesheet" href="/app.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#chronology">Skip to conversation</a>
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <div>
+        <h1>Crewview</h1>
+        <p class="brand-sub">Codex agents + a Claude Code worker · read-only</p>
+      </div>
+    </div>
+    <div class="live" id="live" role="status" aria-live="polite">
+      <span class="live-dot" aria-hidden="true"></span>
+      <span id="live-text">Connecting…</span>
+    </div>
+  </header>
+
+  <nav class="viewtabs" aria-label="Dashboard sections">
+    <button type="button" class="viewtab" data-view="list" aria-controls="sidebar">Conversations</button>
+    <button type="button" class="viewtab" data-view="chronology" aria-controls="chronology">Conversation</button>
+    <button type="button" class="viewtab" data-view="contributions" aria-controls="contributions">Contributions</button>
+  </nav>
+
+  <div class="layout" id="layout" data-view="chronology">
+    <nav class="pane sidebar" id="sidebar" aria-label="Conversations">
+      <div class="sidebar-head">
+        <label class="visually-hidden" for="search">Search conversations</label>
+        <input id="search" type="search" placeholder="Search conversations" autocomplete="off" spellcheck="false">
+        <p class="list-meta" id="list-meta" aria-live="polite"></p>
+      </div>
+      <div id="list-notice"></div>
+      <ul class="conv-list" id="conversation-list" aria-label="Conversation list"></ul>
+    </nav>
+
+    <main class="pane main" id="chronology" tabindex="-1" aria-label="Conversation chronology">
+      <div class="placeholder"><p>Loading conversations…</p></div>
+    </main>
+
+    <aside class="pane contrib" id="contributions" aria-label="Contributions">
+      <div class="placeholder"><p>Contributions appear once a conversation is selected.</p></div>
+    </aside>
+  </div>
+
+  <button type="button" class="jump" id="jump" hidden>New activity below ↓</button>
+</body>
+</html>

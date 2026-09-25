@@ -1,0 +1,19 @@
+# Local installation, history, test runs, and credentials
+crewview.json
+state/
+backups/
+.verification/
+.local/
+.env
+.env.*
+!.env.example
+*.log
+*.jsonl
+__pycache__/
+*.py[cod]
+.DS_Store
+.venv/
+dist/
+.claude/
+.codex/
+.agents/
